@@ -8,11 +8,16 @@ import com.yuriy.design.patterns.decorator.model.TimeStampData;
 /**
  * Created by yyakymchuk on 3/3/2017.
  */
-public class DataProcessorImpl<T extends TimeStampData> implements DataProcessor<T> {
+public class HydrationProcessor<T extends TimeStampData> extends AbstractDecorator<T> {
+
+	public HydrationProcessor(final DataProcessor<T> dataProcessor) {
+		super(dataProcessor);
+	}
 
 	@Override
 	public Collection<T> processData(final Collection<T> dataToProcess) {
-		System.out.println("Data retrieving");
-		return dataToProcess;
+		final Collection<T> processedData = super.processData(dataToProcess);
+		System.out.println("Hydration of data");
+		return processedData;
 	}
 }
