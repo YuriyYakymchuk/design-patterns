@@ -12,7 +12,7 @@ public class FactoryMain {
 	private static final ClassPathXmlApplicationContext applicationContext;
 
 	static {
-		applicationContext = new ClassPathXmlApplicationContext("spring/spring-ctx.xml");
+		applicationContext = new ClassPathXmlApplicationContext("spring/factory-ctx.xml");
 	}
 
 	public static void main(String[] args) {
