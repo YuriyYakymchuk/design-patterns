@@ -9,7 +9,8 @@ import com.yuriy.design.patterns.interpreter.builder.ExpressionBuilder;
 public class InterpreterMain {
 
 	public static void main(String[] args) {
-		Expression expression = ExpressionBuilder.compile("(a|b)&c");
+		ExpressionBuilder expressionBuilder = new ExpressionBuilder();
+		Expression expression = expressionBuilder.compile("(a|b)");
 		System.out.println(expression);
 	}
 }
